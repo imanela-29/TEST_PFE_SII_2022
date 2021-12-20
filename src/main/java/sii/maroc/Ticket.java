@@ -1,9 +1,9 @@
 package sii.maroc;
 
-public class Ticket {
+public class Ticket extends Restaurant{
 	private int number;
 	private String orderName;
-	private Ticket res;
+	private Ticket res = null;
 	
 	public Ticket(int number, String orderName) {
 		super();
@@ -30,7 +30,17 @@ public class Ticket {
 
 	public Ticket and(String string) {
 		
-		return null;
+		Ticket ticketOld = getT();
+		
+		String sub = string.substring(0, 1);
+		int number = Integer.valueOf(sub);
+		
+		res = new Ticket(number, string.substring(1));
+		
+		res.setNumber(ticketOld.getNumber()+number);  
+		 
+		
+		return res;
 	}
 
 }

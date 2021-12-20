@@ -31,6 +31,16 @@ public class Restaurant {
 		Restaurant.tomatoes = tomatoes;
 	}
 	
+	public Ticket getT() {
+		if(t == null )
+			this.order(string3);
+			
+		return t;
+	}
+
+	public void setT(Ticket t) {
+		this.t = t;
+	}
 	
 	public Restaurant(String string, String string2, String string3, String string4) {
 		this.orderList.add("Tomato Mozzarella Salad");
@@ -42,23 +52,28 @@ public class Restaurant {
 	}
 
 	public Restaurant(String string, String string2, String string3, String string4, String string5, String string6) {
-		// TODO Auto-generated constructor stub
+		// TODO Auto-generated constructor stu
 	}
 	
 	public Ticket order(String string) {
 		String sub = string.substring(0, 1);
 		int number = Integer.valueOf(sub);
 		
-		t = new Ticket(number, string.substring(1));
+		this.t = new Ticket(number, string.substring(1));
+		
+		t.setT(t);
 		return t;
 	}
 
 	public Meal retrieve(Ticket ticket) {
 		
 		m = new Meal(ticket.getOrderName(), ticket.getNumber());
+
+		return m;
+	}
+	
+	public Meal getMeal() {
 		return m;
 	}
 
-
-	
 }

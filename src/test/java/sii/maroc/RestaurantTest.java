@@ -36,9 +36,6 @@ public class RestaurantTest {
     	// test if balls et tomatoes
     	Restaurant restaurant = new Restaurant();
     	
-    	System.out.println(restaurant.getBallsMozzarella());
-    	System.out.println(restaurant.getTomatoes());
-    	
     	if(Integer.valueOf(Restaurant.getBallsMozzarella())<= 0 || 
     		Integer.valueOf(Restaurant.getTomatoes()) <= 0) {
     		
@@ -92,6 +89,7 @@ public class RestaurantTest {
         Meal meal = restaurant.retrieve(ticket);
         assertThat(meal.servedDishes()).isEqualTo(5);
         assertThat(meal.cookingDuration()).isEqualTo(27);
+
     }
 
 }
